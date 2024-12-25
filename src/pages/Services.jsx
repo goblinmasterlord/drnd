@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Scale, Calculator, FileText, Gavel, ChevronRight, Phone, Mail } from 'lucide-react';
+import { Scale, Calculator, FileText, Gavel, ChevronRight, Phone, Mail, Plane } from 'lucide-react';
 
 const services = [
   {
@@ -57,6 +57,20 @@ const services = [
       "Mediáció",
       "Cégképviselet"
     ]
+  },
+  {
+    id: "immigration",
+    title: "Bevándorlási Jog",
+    description: "Szakértő támogatás letelepedési és bevándorlási ügyekben. Személyre szabott tanácsadás vízumkérelmek és egyéb hivatalos eljárások során.",
+    icon: Plane,
+    services: [
+      "Tartózkodási engedélyek",
+      "Letelepedési engedélyek",
+      "Munkavállalási engedélyek",
+      "Állampolgársági ügyek",
+      "Vízumügyintézés",
+      "Családegyesítés"
+    ]
   }
 ];
 
@@ -91,8 +105,9 @@ export default function Services() {
         const Icon = service.icon;
         return (
           <section
+            id={service.id}
             key={service.id}
-            className={`py-24 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
+            className={`py-24 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} scroll-mt-20`}
           >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
@@ -102,8 +117,8 @@ export default function Services() {
                 className="max-w-4xl mx-auto"
               >
                 {/* Service Header */}
-                <div className="flex items-start gap-6 mb-12">
-                  <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center flex-shrink-0">
+                <div className="flex flex-col sm:flex-row sm:items-start gap-6 mb-12">
+                  <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
                     <Icon className="w-8 h-8 text-primary-600" />
                   </div>
                   <div>
@@ -127,10 +142,12 @@ export default function Services() {
                   {service.services.map((item, idx) => (
                     <div 
                       key={idx}
-                      className="flex items-center gap-3 p-4 rounded-xl bg-white border border-gray-100 shadow-sm hover:border-primary-100 hover:shadow-md transition-all duration-300"
+                      className="group flex items-center gap-3 p-4 rounded-xl bg-white border border-gray-100 shadow-sm hover:border-primary-200 hover:shadow-md transition-all duration-300"
                     >
-                      <ChevronRight className="w-5 h-5 text-primary-600 flex-shrink-0" />
-                      <span className="text-gray-600">{item}</span>
+                      <div className="w-5 h-5 rounded-full bg-primary-50 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-100 transition-colors">
+                        <ChevronRight className="w-4 h-4 text-primary-600" />
+                      </div>
+                      <span className="text-gray-600 group-hover:text-gray-900 transition-colors">{item}</span>
                     </div>
                   ))}
                 </motion.div>

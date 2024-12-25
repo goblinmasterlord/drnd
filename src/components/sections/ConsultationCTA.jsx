@@ -57,8 +57,8 @@ export default function ConsultationCTA() {
                   transition={{ delay: 0.3 }}
                   className="text-4xl lg:text-5xl font-display font-medium text-gray-900"
                 >
-                  Szakértő Jogi Támogatás{' '}
-                  <span className="text-primary-600">Az Első Lépéstől</span>
+                  Szakértői{' '}
+                  <span className="text-primary-600">Jogi Tanácsadás</span>
                 </motion.h2>
                 <motion.p 
                   initial={{ opacity: 0, y: 20 }}
@@ -67,7 +67,7 @@ export default function ConsultationCTA() {
                   transition={{ delay: 0.4 }}
                   className="text-xl text-gray-600"
                 >
-                  Az ingyenes konzultáció során megismerjük az Ön helyzetét és személyre szabott jogi stratégiát dolgozunk ki.
+                  Forduljon hozzám bizalommal, hogy közösen megtaláljuk az Ön számára legkedvezőbb jogi megoldást!
                 </motion.p>
               </div>
 
@@ -147,9 +147,6 @@ export default function ConsultationCTA() {
                     </a>
                   </div>
 
-                  <div className="text-center text-sm text-gray-500">
-                    Az első konzultáció díjmentes, időtartama kb. 60 perc
-                  </div>
                 </div>
               </div>
             </motion.div>
