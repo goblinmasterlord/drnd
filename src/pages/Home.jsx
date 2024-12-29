@@ -17,7 +17,8 @@ const services = [
       "Fellebbezések és felülvizsgálati kérelmek",
       "Tanácsadás és konzultáció"
     ],
-    icon: Scale
+    icon: Scale,
+    gradientColors: "from-blue-500/10 via-indigo-500/10 to-blue-500/10"
   },
   {
     id: "tax",
@@ -29,7 +30,8 @@ const services = [
       "Adóellenőrzések kezelése",
       "Jogorvoslati eljárások"
     ],
-    icon: Calculator
+    icon: Calculator,
+    gradientColors: "from-emerald-500/10 via-teal-500/10 to-emerald-500/10"
   },
   {
     id: "transfer",
@@ -41,7 +43,8 @@ const services = [
       "Hatósági eljárások kezelése",
       "Nemzetközi tranzakciók"
     ],
-    icon: FileText
+    icon: FileText,
+    gradientColors: "from-violet-500/10 via-purple-500/10 to-violet-500/10"
   },
   {
     id: "civil",
@@ -53,7 +56,8 @@ const services = [
       "Peres képviselet",
       "Követeléskezelés"
     ],
-    icon: Gavel
+    icon: Gavel,
+    gradientColors: "from-amber-500/10 via-orange-500/10 to-amber-500/10"
   },
   {
     id: "immigration",
@@ -63,11 +67,10 @@ const services = [
       "Tartózkodási engedélyek",
       "Letelepedési engedélyek",
       "Munkavállalási engedélyek",
-      "Állampolgársági ügyek",
-      "Vízumügyintézés",
-      "Családegyesítés"
+      "Állampolgársági ügyek"
     ],
-    icon: Plane
+    icon: Plane,
+    gradientColors: "from-sky-500/10 via-cyan-500/10 to-sky-500/10"
   }
 ];
 
@@ -174,7 +177,7 @@ export default function Home() {
       <section className="pt-16 sm:pt-24 pb-24 sm:pb-32 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            className="text-center mb-12 sm:mb-16"
+            className="text-center mb-16 sm:mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -187,56 +190,66 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <Link
                   to={`/services#${service.id}`}
                   key={service.title}
+                  className="group relative flex rounded-2xl bg-white transition-all duration-300"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="group relative bg-white rounded-2xl p-8 sm:p-10 h-full hover:bg-gradient-to-br hover:from-white hover:to-primary-50/30 transition-all duration-300"
+                    className="flex flex-col p-6 sm:p-8 w-full"
                   >
-                    {/* Enhanced layered effects */}
-                    <div className="absolute inset-0 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-shadow duration-500" />
-                    <div className="absolute inset-0 rounded-2xl border border-gray-100 group-hover:border-primary-200 transition-colors duration-300" />
-                    <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <ArrowRight className="w-6 h-6 text-primary-600 transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300" />
+                    {/* Card effects */}
+                    <div className="absolute inset-0 rounded-2xl">
+                      <div className="absolute inset-0 shadow-md shadow-gray-200/50 transition-shadow duration-300 rounded-2xl group-hover:shadow-lg" />
+                      <div className="absolute inset-0 border border-gray-100 rounded-2xl transition-colors duration-300 group-hover:border-primary-100" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-transparent opacity-0 transition-opacity duration-300 rounded-2xl group-hover:opacity-100" />
                     </div>
                     
-                    <div className="relative flex flex-col sm:flex-row gap-6 sm:gap-8">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-primary-50 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                        <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary-600" />
-                      </div>
-
-                      <div className="flex-1">
-                        <h3 className="text-2xl sm:text-3xl font-display font-medium text-gray-900 mb-4">
-                          {service.title}
-                        </h3>
-                        <p className="text-gray-600 text-lg mb-6">
-                          {service.description}
-                        </p>
-                        <ul className="grid gap-3">
-                          {service.details.map((detail, idx) => (
-                            <li 
-                              key={idx} 
-                              className="flex items-center gap-3 text-gray-600 group-hover:text-gray-900 transition-colors"
-                            >
-                              <div className="w-1.5 h-1.5 rounded-full bg-primary-500 flex-shrink-0 group-hover:scale-125 transition-transform" />
-                              <span className="text-base">{detail}</span>
-                            </li>
-                          ))}
-                        </ul>
+                    {/* Icon */}
+                    <div className="relative mb-6">
+                      <div className="w-14 h-14 rounded-xl bg-primary-50 flex items-center justify-center transition-all duration-300 group-hover:bg-primary-100">
+                        <Icon className="w-7 h-7 text-primary-600 transition-transform duration-300 group-hover:scale-110" />
                       </div>
                     </div>
 
-                    {/* Bottom accent line */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500/0 via-primary-500/0 to-primary-500/0 group-hover:via-primary-500 transition-all duration-300 rounded-b-2xl" />
+                    {/* Content */}
+                    <div className="relative flex-1 flex flex-col">
+                      <h3 className="text-xl font-display font-medium text-gray-900 mb-3 transition-colors duration-300 group-hover:text-primary-600">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600 mb-6 line-clamp-2">
+                        {service.description}
+                      </p>
+                      
+                      {/* Service highlights */}
+                      <div className="mt-auto space-y-2.5">
+                        {service.details.slice(0, 3).map((detail, idx) => (
+                          <div 
+                            key={idx}
+                            className="flex items-center gap-3 text-sm text-gray-600"
+                          >
+                            <div className="w-1 h-1 rounded-full bg-primary-500 flex-shrink-0" />
+                            <span>{detail}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Call-to-action */}
+                      <div className="mt-8 flex items-center text-primary-600 text-sm font-medium">
+                        <div className="flex items-center gap-2">
+                          <span>További részletek</span>
+                          <ArrowRight className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-2" />
+                        </div>
+                      </div>
+                    </div>
                   </motion.div>
                 </Link>
               );
