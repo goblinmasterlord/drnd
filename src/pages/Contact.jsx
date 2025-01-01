@@ -39,22 +39,42 @@ export default function Contact() {
   return (
     <div className="pt-20 bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gray-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.primary.50/3)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.primary.50/3)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <section className="py-12 sm:py-20 bg-gray-50 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.primary.50/3)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.primary.50/3)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_bottom,white,transparent)]" />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div 
-            className="max-w-2xl mx-auto text-center"
+            className="max-w-2xl mx-auto text-center space-y-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-display font-medium text-gray-900 mb-6">
+            <div className="inline-flex items-center justify-center px-4 py-1.5 bg-primary-50 text-primary-600 rounded-full text-sm font-medium mb-2">
+              <span className="relative">Kapcsolatfelvétel</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-gray-900 tracking-tight">
               Kapcsolat
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl mx-auto">
               Keressen bizalommal személyes konzultációért. Az első egyeztetés díjmentes.
             </p>
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a 
+                href="tel:+36702777677"
+                className="group flex items-center gap-2 px-5 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors w-full sm:w-auto"
+              >
+                <Phone size={18} className="transition-transform group-hover:scale-110" />
+                <span>+36 70 277 7677</span>
+              </a>
+              <a 
+                href="mailto:donat.nagy@drnd.hu"
+                className="group flex items-center gap-2 px-5 py-2.5 bg-white text-primary-600 rounded-lg border border-primary-200 hover:border-primary-300 hover:bg-primary-50/50 transition-all w-full sm:w-auto"
+              >
+                <Mail size={18} className="transition-transform group-hover:scale-110" />
+                <span>donat.nagy@drnd.hu</span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

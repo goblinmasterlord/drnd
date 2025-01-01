@@ -78,23 +78,26 @@ export default function Services() {
   return (
     <div className="pt-20 bg-white">
       {/* Hero Section */}
-      <section className="py-24 bg-gray-50 relative overflow-hidden">
+      <section className="py-12 sm:py-20 bg-gray-50 relative overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.primary.50/3)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.primary.50/3)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.primary.50/3)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.primary.50/3)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_bottom,white,transparent)]" />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div 
-            className="max-w-2xl mx-auto text-center"
+            className="max-w-2xl mx-auto text-center space-y-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-display font-medium text-gray-900 mb-6">
+            <div className="inline-flex items-center justify-center px-4 py-1.5 bg-primary-50 text-primary-600 rounded-full text-sm font-medium mb-2">
+              <span className="relative">Jogi Szolgáltatások</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-gray-900 tracking-tight">
               Szakterületek
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl mx-auto">
               Professzionális jogi szolgáltatások széles körű portfóliója, 
-              személyre szabott megoldásokkal és szakértő támogatással.
+              személyre szabott megoldásokkal.
             </p>
           </motion.div>
         </div>
