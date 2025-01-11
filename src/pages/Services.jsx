@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Scale, Calculator, FileText, Gavel, ChevronRight, Phone, Mail, Plane } from 'lucide-react';
+import { Scale, Calculator, FileText, Gavel, Check, Phone, Mail, Plane } from 'lucide-react';
+import { useHashScroll } from '../hooks/useHashScroll';
 
 const services = [
   {
@@ -75,6 +76,9 @@ const services = [
 ];
 
 export default function Services() {
+  // Initialize hash scroll handling
+  useHashScroll();
+
   return (
     <div className="pt-20 bg-white">
       {/* Hero Section */}
@@ -96,7 +100,7 @@ export default function Services() {
               Szakterületek
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl mx-auto">
-            Professzionális jogi szolgáltatások széles körű portfóliója, személyre szabott megoldásokkal és szakértő támogatással.
+              Professzionális jogi szolgáltatások széles körű portfóliója, személyre szabott megoldásokkal és szakértő támogatással.
             </p>
           </motion.div>
         </div>
@@ -120,7 +124,7 @@ export default function Services() {
               >
                 {/* Service Header */}
                 <div className="flex flex-col sm:flex-row sm:items-start gap-6 mb-12">
-                  <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
+                  <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center flex-shrink-0">
                     <Icon className="w-8 h-8 text-primary-600" />
                   </div>
                   <div>
@@ -144,10 +148,10 @@ export default function Services() {
                   {service.services.map((item, idx) => (
                     <div 
                       key={idx}
-                      className="group flex items-center gap-3 p-4 rounded-xl bg-white border border-gray-100 shadow-sm hover:border-primary-200 hover:shadow-md transition-all duration-300"
+                      className="group flex items-start gap-3 p-4 rounded-xl bg-white border border-gray-100 shadow-sm hover:border-primary-200 hover:shadow-md transition-all duration-300"
                     >
-                      <div className="w-5 h-5 rounded-full bg-primary-50 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-100 transition-colors">
-                        <ChevronRight className="w-4 h-4 text-primary-600" />
+                      <div className="w-5 h-5 mt-0.5 rounded-full bg-primary-50 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-100 transition-colors">
+                        <Check className="w-3 h-3 text-primary-600" />
                       </div>
                       <span className="text-gray-600 group-hover:text-gray-900 transition-colors">{item}</span>
                     </div>

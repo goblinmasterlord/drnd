@@ -1,16 +1,30 @@
 // src/components/layout/Footer.jsx
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Scale, Calculator, FileText, Gavel } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Phone, Mail, MapPin, Clock, Scale, Calculator, FileText, Gavel, Plane } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
 
   const services = [
     { name: 'Büntetőjog', href: '/services#criminal', icon: Scale },
     { name: 'Adójog', href: '/services#tax', icon: Calculator },
     { name: 'Transzferár', href: '/services#transfer', icon: FileText },
     { name: 'Polgári jog', href: '/services#civil', icon: Gavel },
+    { name: 'Idegenrendészet', href: '/services#immigration', icon: Plane },
   ];
+
+  const handleServiceClick = (e, href) => {
+    // If we're already on the services page, handle the navigation manually
+    if (location.pathname === '/services') {
+      e.preventDefault();
+      const id = href.split('#')[1];
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <footer className="bg-gray-50 relative overflow-hidden">
@@ -42,6 +56,7 @@ const Footer = () => {
                     <li key={service.name}>
                       <Link 
                         to={service.href}
+                        onClick={(e) => handleServiceClick(e, service.href)}
                         className="group flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors"
                       >
                         <Icon size={16} className="group-hover:scale-110 transition-transform" />
