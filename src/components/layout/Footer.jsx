@@ -1,6 +1,82 @@
 // src/components/layout/Footer.jsx
+import { useState, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Scale, Calculator, FileText, Gavel, Plane } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Scale, Calculator, FileText, Gavel, Plane, Copy, Check } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const CopyButton = ({ textToCopy }) => {
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [tooltipText, setTooltipText] = useState('Másolás vágólapra');
+
+  const handleCopy = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(textToCopy);
+      setTooltipText('Sikeres másolás!');
+      setShowSuccess(true);
+      
+      // Reset states after delay
+      setTimeout(() => {
+        setShowSuccess(false);
+        setTimeout(() => {
+          setTooltipText('Másolás vágólapra');
+        }, 300);
+      }, 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  }, [textToCopy]);
+
+  return (
+    <div className="relative group">
+      <button
+        onClick={handleCopy}
+        className="p-1.5 rounded-lg bg-primary-50 hover:bg-primary-100 transition-all duration-300 relative"
+        aria-label="Email cím másolása"
+      >
+        <AnimatePresence mode="wait">
+          {showSuccess ? (
+            <motion.div
+              key="check"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              className="text-primary-600"
+            >
+              <Check size={14} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="copy"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              className="text-primary-600"
+            >
+              <Copy size={14} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </button>
+
+      {/* Tooltip */}
+      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+        <AnimatePresence>
+          {(showSuccess || true) && (
+            <motion.div
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 5 }}
+              className="bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap"
+            >
+              {tooltipText}
+              <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,7 +91,6 @@ const Footer = () => {
   ];
 
   const handleServiceClick = (e, href) => {
-    // If we're already on the services page, handle the navigation manually
     if (location.pathname === '/services') {
       e.preventDefault();
       const id = href.split('#')[1];
@@ -83,7 +158,7 @@ const Footer = () => {
                     <span className="text-sm">+36 70 277 7677</span>
                   </a>
                 </li>
-                <li>
+                <li className="flex items-center gap-2">
                   <a 
                     href="mailto:donat.nagy@drnd.hu"
                     className="group flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors"
@@ -91,6 +166,7 @@ const Footer = () => {
                     <Mail size={16} className="group-hover:scale-110 transition-transform" />
                     <span className="text-sm">donat.nagy@drnd.hu</span>
                   </a>
+                  <CopyButton textToCopy="donat.nagy@drnd.hu" />
                 </li>
                 <li className="flex items-start gap-2 text-gray-600">
                   <MapPin size={16} className="mt-1 flex-shrink-0" />
