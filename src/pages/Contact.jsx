@@ -30,9 +30,7 @@ const contactInfo = [
 ];
 
 const officeHours = [
-  { days: 'Hétfő - Péntek', hours: '9:00 - 17:00' },
-  { days: 'Szombat', hours: 'Előzetes Egyeztetéssel' },
-  { days: 'Vasárnap', hours: 'Zárva' }
+  { days: 'Hétfő - Péntek', hours: '9:00 - 17:00' }
 ];
 
 export default function Contact() {
@@ -135,67 +133,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Personal Introduction Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="grid lg:grid-cols-5 gap-12 items-center">
-              {/* Image Container */}
-              <div className="lg:col-span-2">
-                <div className="relative mx-auto max-w-sm lg:max-w-none">
-                  <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-gray-100">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <p className="text-gray-500">Profilkép helye</p>
-                    </div>
-                  </div>
-                  {/* Decorative elements */}
-                  <div className="absolute -top-3 -right-3 w-20 h-20 bg-primary-50/50 rounded-2xl -z-10" />
-                  <div className="absolute -bottom-3 -left-3 w-24 h-24 bg-gray-100 rounded-2xl -z-10" />
-                </div>
-              </div>
-
-              {/* Introduction Text */}
-              <div className="lg:col-span-3 space-y-6">
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-display font-medium text-gray-900">
-                    Dr. Nagy Donát vagyok
-                  </h2>
-                  <div className="space-y-4 text-gray-600">
-                    <p className="leading-relaxed">
-                      15 éves szakmai tapasztalattal rendelkező ügyvéd vagyok, aki szakértelmét az ügyfelek szolgálatába állítja. Hiszek abban, hogy minden jogi kihívásra van megfelelő megoldás.
-                    </p>
-                    <p className="leading-relaxed">
-                      Szakterületeim között megtalálható a büntetőjog, adójog, polgári jog és a nemzetközi ügyletek kezelése. Célom, hogy ügyfeleim számára a lehető legjobb jogi megoldásokat biztosítsam.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Quick Stats */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4">
-                  <div className="space-y-2">
-                    <div className="text-3xl font-display font-medium text-primary-600">15+</div>
-                    <div className="text-sm text-gray-600">év szakmai tapasztalat</div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-3xl font-display font-medium text-primary-600">500+</div>
-                    <div className="text-sm text-gray-600">sikeres ügy</div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-3xl font-display font-medium text-primary-600">4.9</div>
-                    <div className="text-sm text-gray-600">ügyfélelégedettség</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Office Hours & Map Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -248,7 +185,10 @@ export default function Contact() {
                         Megközelítés
                       </h3>
                       <p className="text-gray-600">
-                        Az irodánk a belvárosban, kiváló közlekedési kapcsolatokkal rendelkező helyen található. M3 metró Nyugati tér megállójától 2 perc sétára.
+                      Irodám a Lujza utcában található, a Teleki László tér szomszédságában. Parkolás a környező utcákban lehetséges.  
+
+Kérjük, vegye figyelembe, hogy személyes konzultációra kizárólag előzetes időpontfoglalás alapján van lehetőség. Időpont foglalás miatt keressen minket elérhetőségeinken.
+
                       </p>
                     </div>
                   </div>

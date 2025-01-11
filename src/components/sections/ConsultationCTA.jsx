@@ -7,7 +7,7 @@ export default function ConsultationCTA() {
   const features = [
     {
       icon: Users,
-      title: 'Személyes Konzultáció',
+      title: 'Személyes és online konzultáció',
       description: 'Alapos esetmegbeszélés és stratégia kialakítása'
     },
     {
@@ -17,7 +17,7 @@ export default function ConsultationCTA() {
     },
     {
       icon: Clock,
-      title: '60 Perces Találkozó',
+      title: '20 Perces Találkozó',
       description: 'Részletes helyzetelemzés és tanácsadás'
     }
   ];
@@ -48,7 +48,7 @@ export default function ConsultationCTA() {
                   transition={{ delay: 0.2 }}
                   className="inline-block text-sm font-medium text-primary-600 tracking-wide uppercase"
                 >
-                  Első Konzultáció Díjmentesen
+                  Ahogy Önnek a legjobb
                 </motion.span>
                 <motion.h2 
                   initial={{ opacity: 0, y: 20 }}

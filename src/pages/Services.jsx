@@ -23,8 +23,9 @@ const services = [
     icon: Calculator,
     services: [
       "Adóhatósági képviselet",
-      "Adótervezés és optimalizálás",
+      "Tanácsadás adótervezésben",
       "Adóellenőrzések kezelése",
+      "Adóhatósági állásfoglalás kérése",
       "Fellebbezések készítése",
       "Adókockázat elemzés",
       "Nemzetközi adótervezés"
@@ -36,11 +37,12 @@ const services = [
     description: "Professzionális transzferár-dokumentáció készítése és megfelelőségi tanácsadás multinacionális vállalatok számára.",
     icon: FileText,
     services: [
-      "Transzferár-dokumentáció készítése",
+      "Transzferár-dokumentációk készítése",
+      "Transzferár adatszolgáltatás készítése, és korábbi adatszolgáltatások ellenőrzése",
       "Megfelelőségi vizsgálatok",
-      "Előzetes ármegállapítás (APA)",
       "Hatósági eljárások kezelése",
       "Transzferár-politika kialakítása",
+      "Segítség árképzésben és szokásos piaci kamat megállapításában",
       "Nemzetközi tranzakciók támogatása"
     ]
   },
@@ -51,7 +53,7 @@ const services = [
     icon: Gavel,
     services: [
       "Szerződések készítése",
-      "Kártérítési ügyek",
+      "Ingatlanügyek",
       "Peres képviselet",
       "Követeléskezelés",
       "Mediáció",
@@ -60,16 +62,14 @@ const services = [
   },
   {
     id: "immigration",
-    title: "Bevándorlási Jog",
+    title: "Idegenrendészet",
     description: "Szakértő támogatás letelepedési és bevándorlási ügyekben. Személyre szabott tanácsadás vízumkérelmek és egyéb hivatalos eljárások során.",
     icon: Plane,
     services: [
       "Tartózkodási engedélyek",
       "Letelepedési engedélyek",
       "Munkavállalási engedélyek",
-      "Állampolgársági ügyek",
-      "Vízumügyintézés",
-      "Családegyesítés"
+      "Vízumügyintézés"
     ]
   }
 ];
@@ -96,8 +96,7 @@ export default function Services() {
               Szakterületek
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl mx-auto">
-              Professzionális jogi szolgáltatások széles körű portfóliója, 
-              személyre szabott megoldásokkal.
+            Professzionális jogi szolgáltatások széles körű portfóliója, személyre szabott megoldásokkal és szakértő támogatással.
             </p>
           </motion.div>
         </div>
@@ -178,10 +177,10 @@ export default function Services() {
               
               <div className="relative text-center space-y-6">
                 <h2 className="text-3xl md:text-4xl font-display font-medium text-gray-900">
-                  Kezdjük Meg az Együttműködést
+                  Kezdjük meg az együttműködést
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                  Keressen bizalommal egy személyes egyeztetésért. Az első konzultáció díjmentes.
+                  Keressen bizalommal egy személyes egyeztetésért.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
                   <a 

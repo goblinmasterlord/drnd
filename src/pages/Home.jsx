@@ -10,12 +10,10 @@ const services = [
   {
     id: "criminal",
     title: "Büntetőjog",
-    description: "Szakértő védelem és képviselet büntetőjogi eljárásokban.",
+    description: "Védelem és képviselet büntetőeljárásban, különösen költségvetési csalásban.",
     details: [
-      "Büntetőjogi védelem",
-      "Jogi képviselet büntetőeljárásban",
-      "Fellebbezések és felülvizsgálati kérelmek",
-      "Tanácsadás és konzultáció"
+      "Szakértő védelem olyan ügyekben amik költségvetési csalással kapcsolatosak",
+      "Fellebbezések és felülvizsgálati kérelmek"
     ],
     icon: Scale,
     gradientColors: "from-blue-500/10 via-indigo-500/10 to-blue-500/10"
@@ -25,10 +23,8 @@ const services = [
     title: "Adójog",
     description: "Átfogó adójogi tanácsadás és képviselet adóhatósági eljárásokban.",
     details: [
-      "Adóhatósági eljárások",
-      "Adótervezés és optimalizálás",
       "Adóellenőrzések kezelése",
-      "Jogorvoslati eljárások"
+      "Tanácsadás adótervezésben és optimalizálásban"
     ],
     icon: Calculator,
     gradientColors: "from-emerald-500/10 via-teal-500/10 to-emerald-500/10"
@@ -36,12 +32,14 @@ const services = [
   {
     id: "transfer",
     title: "Transzferár",
-    description: "Szakértő transzferár-dokumentáció készítése és megfelelőségi tanácsadás.",
+    description: "Transzferár-dokumentáció készítése és megfelelőségi tanácsadás.",
     details: [
-      "Transzferár-dokumentáció készítése",
-      "Megfelelőségi vizsgálatok",
+      "Fődokumentum (Master file) és Helyi dokumentum (Local file) készítése",
+      "Transzferár adatszolgáltatás készítése",
+      "Meglévő dokumentumok felülvizsgálata",
+      "Külföldi dokumentumok ellenőrzése magyar szabályok tekintetében",
       "Hatósági eljárások kezelése",
-      "Nemzetközi tranzakciók"
+      "Tanácsadás árképzésben és tanácsadás"
     ],
     icon: FileText,
     gradientColors: "from-violet-500/10 via-purple-500/10 to-violet-500/10"
@@ -52,7 +50,6 @@ const services = [
     description: "Átfogó polgári jogi képviselet és tanácsadás magánszemélyek és vállalkozások részére.",
     details: [
       "Szerződések készítése és véleményezése",
-      "Kártérítési ügyek",
       "Peres képviselet",
       "Követeléskezelés"
     ],
@@ -61,13 +58,11 @@ const services = [
   },
   {
     id: "immigration",
-    title: "Bevándorlási Jog",
+    title: "Idegenrendészeti ügyek",
     description: "Szakértő támogatás letelepedési és bevándorlási ügyekben, vízumkérelmekben.",
     details: [
       "Tartózkodási engedélyek",
-      "Letelepedési engedélyek",
-      "Munkavállalási engedélyek",
-      "Állampolgársági ügyek"
+      "Letelepedési engedélyek"
     ],
     icon: Plane,
     gradientColors: "from-sky-500/10 via-cyan-500/10 to-sky-500/10"

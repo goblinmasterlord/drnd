@@ -39,6 +39,7 @@ const Navbar = () => {
   const navigation = [
     { name: 'Főoldal', href: '/' },
     { name: 'Szakterületek', href: '/services' },
+    { name: 'Rólam', href: '/about' },
     { name: 'Kapcsolat', href: '/contact' },
   ];
 

@@ -6,7 +6,7 @@ import { ScrollToTop, BackToTopButton, PageTransition, ScrollRestoration } from 
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
-
+import About from './pages/About';
 function App() {
   return (
     <Router>
@@ -30,6 +30,14 @@ function App() {
                 element={
                   <PageTransition>
                     <Services />
+                  </PageTransition>
+                } 
+              />
+              <Route 
+                path="/about" 
+                element={
+                  <PageTransition>
+                    <About />
                   </PageTransition>
                 } 
               />
