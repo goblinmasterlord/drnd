@@ -191,13 +191,6 @@ const Footer = () => {
                     <p>9:00 - 17:00</p>
                   </div>
                 </li>
-                <li className="flex items-center gap-2">
-                  <Clock size={16} className="text-gray-400" />
-                  <div>
-                    <p className="font-medium">Szombat - Vasárnap</p>
-                    <p>Zárva</p>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>
