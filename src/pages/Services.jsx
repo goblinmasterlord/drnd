@@ -6,14 +6,12 @@ const services = [
   {
     id: "criminal",
     title: "Büntetőjog",
-    description: "Szakértő védelem és képviselet büntetőjogi eljárásokban. Tapasztalt védelem a teljes eljárás során.",
+    description: "Szakértő védelem és képviselet bűntető eljárás minden szakaszában.",
     icon: Scale,
     services: [
-      "Büntetőjogi védelem",
+      "Terhelti képviselet",
       "Képviselet nyomozati szakban",
       "Bírósági képviselet",
-      "Fellebbezések készítése",
-      "Alkotmányjogi panaszok",
       "Tanácsadás és konzultáció"
     ]
   },
@@ -35,15 +33,15 @@ const services = [
   {
     id: "transfer",
     title: "Transzferár",
-    description: "Professzionális transzferár-dokumentáció készítése és megfelelőségi tanácsadás multinacionális vállalatok számára.",
+    description: "Fődokumentum (Master File) és helyi dokumentum (Local File) készítése angol és magyar nyelven",
     icon: FileText,
     services: [
-      "Transzferár-dokumentációk készítése",
-      "Transzferár adatszolgáltatás készítése, és korábbi adatszolgáltatások ellenőrzése",
+      "Proffesszionális transzferár dokumtációk készítése és tanácsadás",
       "Megfelelőségi vizsgálatok",
       "Hatósági eljárások kezelése",
       "Transzferár-politika kialakítása",
       "Segítség árképzésben és szokásos piaci kamat megállapításában",
+      "Külföldi dokumentáció átultetése a magyar szabályoknak megfelelően",
       "Nemzetközi tranzakciók támogatása"
     ]
   },
@@ -64,7 +62,7 @@ const services = [
   {
     id: "immigration",
     title: "Idegenrendészet",
-    description: "Szakértő támogatás letelepedési és bevándorlási ügyekben. Személyre szabott tanácsadás vízumkérelmek és egyéb hivatalos eljárások során.",
+    description: "Szakértő támogatás bevándorlási ügyekben.",
     icon: Plane,
     services: [
       "Tartózkodási engedélyek",

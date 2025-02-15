@@ -59,7 +59,7 @@ const services = [
   {
     id: "immigration",
     title: "Idegenrendészeti ügyek",
-    description: "Szakértő támogatás letelepedési és bevándorlási ügyekben, vízumkérelmekben.",
+    description: "Szakértő támogatás bevándorlási ügyekben.",
     details: [
       "Tartózkodási engedélyek",
       "Letelepedési engedélyek"

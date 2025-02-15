@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Phone, Mail, Menu, X, ChevronRight } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import Logo from '../../assets/logo.svg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,9 +76,12 @@ const Navbar = () => {
             {/* Logo */}
             <Link 
               to="/" 
-              className="text-xl font-display font-medium text-gray-900 hover:text-primary-600 transition-colors"
+              className="flex items-center space-x-2"
             >
-              <span className="text-primary-600">Dr.</span> Nagy Donát
+              <img src={Logo} alt="Logo" className="h-8 md:h-10 w-auto transition-transform hover:scale-105" />
+              <span className="text-xl font-display font-medium text-gray-900 hover:text-primary-600 transition-colors">
+                <span className="text-primary-600">Dr.</span> Nagy Donát Ügyvéd
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
