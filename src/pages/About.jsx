@@ -1,6 +1,7 @@
 // src/pages/About.jsx
 import { motion } from 'framer-motion';
 import { Phone, Mail } from 'lucide-react';
+import profilePic from '../assets/dr-nagy-donat.png';
 
 export default function About() {
   return (
@@ -43,9 +44,11 @@ export default function About() {
               {/* Image Container */}
               <div className="relative">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gray-100">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-gray-500">Profilkép helye</p>
-                  </div>
+                  <img 
+                    src={profilePic} 
+                    alt="Dr. Nagy Donát" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {/* Decorative elements */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary-50/50 rounded-2xl -z-10" />
