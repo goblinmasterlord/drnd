@@ -170,10 +170,15 @@ const Footer = () => {
                 </li>
                 <li className="flex items-start gap-2 text-gray-600">
                   <MapPin size={16} className="mt-1 flex-shrink-0" />
-                  <span className="text-sm">
+                  <a 
+                    href="https://maps.google.com/?q=1086+Budapest,+Lujza+u.+1/B+I/11"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm hover:text-primary-600 transition-colors"
+                  >
                     H-1086 Budapest,<br />
                     Lujza u. 1/B I/11
-                  </span>
+                  </a>
                 </li>
               </ul>
             </div>

@@ -1,6 +1,7 @@
 // src/pages/Contact.jsx
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Building } from 'lucide-react';
+import GoogleMapSection from '../components/sections/GoogleMap';
 
 const contactInfo = [
   {
@@ -24,7 +25,7 @@ const contactInfo = [
     title: "Személyes Ügyintézés",
     action: {
       text: "1086 Budapest, Lujza u. 1/B I/11",
-      href: null
+      href: "https://maps.google.com/?q=1086+Budapest,+Lujza+u.+1/B+I/11"
     }
   }
 ];
@@ -185,10 +186,9 @@ export default function Contact() {
                         Megközelítés
                       </h3>
                       <p className="text-gray-600">
-                      Irodám a Lujza utcában található, a Teleki László tér szomszédságában. Parkolás a környező utcákban lehetséges.  
+                        Irodám a Lujza utcában található, a Teleki László tér szomszédságában. Parkolás a környező utcákban lehetséges.  
 
-Kérjük, vegye figyelembe, hogy személyes konzultációra kizárólag előzetes időpontfoglalás alapján van lehetőség. Időpont foglalás miatt keressen minket elérhetőségeinken.
-
+                        Kérjük, vegye figyelembe, hogy személyes konzultációra kizárólag előzetes időpontfoglalás alapján van lehetőség. Időpont foglalás miatt keressen minket elérhetőségeinken.
                       </p>
                     </div>
                   </div>
@@ -196,16 +196,7 @@ Kérjük, vegye figyelembe, hogy személyes konzultációra kizárólag előzete
               </motion.div>
 
               {/* Map Container */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="relative rounded-2xl overflow-hidden bg-gray-100 min-h-[400px] lg:min-h-full"
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-gray-500">Térkép helye</p>
-                </div>
-              </motion.div>
+              <GoogleMapSection />
             </div>
           </div>
         </div>
