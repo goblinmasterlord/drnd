@@ -6,30 +6,32 @@ const officeLocation = {
   lng: 19.084853
 };
 
+const LIBRARIES = ['marker'];
+
 const mapOptions = {
   disableDefaultUI: true,
   clickableIcons: false,
   scrollwheel: true,
   mapId: import.meta.env.VITE_GOOGLE_MAPS_MAP_ID,
-  styles: [
-    {
-      featureType: "all",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#4c6b50" }],
-    },
-    {
-      featureType: "water",
-      elementType: "geometry.fill",
-      stylers: [{ color: "#e6ebe6" }],
-    },
-  ],
+  // styles: [
+  //   {
+  //     featureType: "all",
+  //     elementType: "labels.text.fill",
+  //     stylers: [{ color: "#4c6b50" }],
+  //   },
+  //   {
+  //     featureType: "water",
+  //     elementType: "geometry.fill",
+  //     stylers: [{ color: "#e6ebe6" }],
+  //   },
+  // ],
 };
 
 export default function GoogleMapSection() {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
     version: "beta",
-    libraries: ['marker'],
+    libraries: LIBRARIES,
   });
 
   if (loadError) {
