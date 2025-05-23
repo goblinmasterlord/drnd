@@ -14,11 +14,6 @@ export default function ConsultationCTA() {
       icon: Calendar,
       title: 'Rugalmas Időpontok',
       description: 'Az Ön időbeosztásához alkalmazkodva'
-    },
-    {
-      icon: Clock,
-      title: '20 Perces Találkozó',
-      description: 'Részletes helyzetelemzés és tanácsadás'
     }
   ];
 
